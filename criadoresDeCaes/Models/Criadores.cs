@@ -7,6 +7,7 @@
     {
         public Criadores() {
             ListaAnimais=new HashSet<Animais>();
+            ListaRacas=new HashSet<Racas>();
         }
         /// <summary>
         /// PK
@@ -47,5 +48,11 @@
         /// FK para a lista de cães/cadelas, propidade do Criador
         /// </summary>
         public ICollection<Animais> ListaAnimais { get; set; }
+
+        /// <summary>
+        /// N-M
+        /// FK para a lista de Raças atribuidas aos Criadores
+        /// </summary>
+        public ICollection<Racas> ListaRacas { get; set; }
     }
 }

@@ -8,6 +8,7 @@
         public Racas()
         {
             ListaAnimais= new HashSet<Animais>();
+            ListaCriadores = new HashSet<Criadores>();
         }
         /// <summary>
         /// PK
@@ -22,6 +23,11 @@
         /// lista dos animais que são de uma raça 
         /// </summary>
         public ICollection<Animais> ListaAnimais { get; set;}
+        /// <summary>
+        /// n-M
+        /// Lista dos Criadores de uma determinada raça
+        /// </summary>
+        public ICollection<Criadores> ListaCriadores { get; set;}
 
     }
 }
