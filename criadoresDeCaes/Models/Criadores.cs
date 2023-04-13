@@ -5,6 +5,9 @@
     /// </summary>
     public class Criadores
     {
+        public Criadores() {
+            ListaAnimais=new HashSet<Animais>();
+        }
         /// <summary>
         /// PK
         /// </summary>
@@ -40,5 +43,9 @@
         /// endereço de Email
         /// </summary>
         public string Email { get; set; }
+        /// <summary>
+        /// FK para a lista de cães/cadelas, propidade do Criador
+        /// </summary>
+        public ICollection<Animais> ListaAnimais { get; set; }
     }
 }
