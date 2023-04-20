@@ -1,4 +1,8 @@
-﻿namespace criadoresDeCaes.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+
+namespace criadoresDeCaes.Models
 {
     /// <summary>
     /// descrição dos criadores 
@@ -17,12 +21,14 @@
         /// <summary>
         ///nome do criador
         /// </summary>
+        [Required(ErrorMessage ="O {0} é de preenchimento obrigatório")]
         public string Nome { get; set; }
 
 
         /// <summary>
         /// nome comercial do criador
         /// </summary>
+        [Display(Name = "Nome Criador")]
         public string NomeCriador { get; set;}
 
         /// <summary>
@@ -33,16 +39,21 @@
         /// <summary>
         /// código postal
         /// </summary>
+        [Display(Name = "Código Postal")]
         public string codPostal { get; set; }
 
         /// <summary>
         /// número de telemovel
         /// </summary>
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
+        [Display(Name ="Telemóvel")]
         public string Telemovel { get; set; }
 
         /// <summary>
         /// endereço de Email
         /// </summary>
+        [EmailAddress(ErrorMessage ="O {0] não está corretamente escrito")]
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório")]
         public string Email { get; set; }
         /// <summary>
         /// FK para a lista de cães/cadelas, propidade do Criador
